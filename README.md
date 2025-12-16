@@ -1,36 +1,106 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🏥 AI-Powered Healthcare Translator
 
-## Getting Started
+A web-based prototype that enables **multilingual voice translation between patients and healthcare providers** using generative AI.  
+The application converts patient speech into text, translates it into the provider’s preferred language, and plays back the translated audio — all in a clean, mobile-friendly interface.
 
-First, run the development server:
+---
 
+## 🚀 Live Demo
+Link - <a href="https://nao-inky.vercel.app/"> Healthcare Translator</a>
+
+<img src="/public/image.png" width="700" title="Youtube-Clone">
+
+---
+
+## 🎯 Problem Statement
+
+Language barriers in healthcare can impact patient safety and quality of care.  
+This project demonstrates how **Speech-to-Text, AI Translation, and Text-to-Speech** can be combined to enable smoother communication in clinical environments.
+
+---
+
+## ✨ Key Features
+
+- 🎤 Speech-to-Text using ElevenLabs (SCRIBE v2)
+- 🌐 AI-powered translation using Google Gemini
+- 🔊 Natural Text-to-Speech playback
+- 📱 Mobile-first, responsive UI
+- 📝 Dual transcript view (Original + Translated)
+- 🎨 Modern UI with animations
+
+---
+
+## 🧠 AI Tools & Technologies
+
+| Purpose      |    Tools  |
+|   ------     |    ------   |
+| Speech-to-Text | ElevenLabs SCRIBE v2 |
+| Translation | Google Gemini 1.5 Flash |
+| Text-to-Speech | ElevenLabs Multilingual TTS |
+| Frontend | Next.js, React, TypeScript |
+| Styling | Tailwind CSS |
+| Animations | Framer Motion |
+
+
+
+## ⚙️ Application Flow
+
+1. Select input and output languages  
+2. Record patient speech  
+3. Speech is transcribed using STT  
+4. Text is translated via Gemini AI  
+5. Translated text is displayed and played using TTS  
+6. Click on the Speak button to hear the translation
+
+---
+
+## 🔐 Privacy & Security
+
+- No patient data is stored
+- All processing is in-memory
+- HTTPS-only communication
+- API keys stored securely in environment variables
+- Designed with HIPAA principles in mind (prototype-level)
+
+---
+
+## 🛠️ Setup Instructions
+
+### 1️⃣ Clone the repository
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/coolshubhamsharma/Nao_LLM
+cd Nao_LLM
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2️⃣ Install dependencies
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 3️⃣ Environment variables
+Create `.env.local`:
+```env
+ELEVENLABS_API_KEY=your_elevenlabs_key
+GEMINI_API_KEY=your_gemini_key
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+NEXT_PUBLIC_DEFAULT_INPUT_LANG=en-US
+NEXT_PUBLIC_DEFAULT_OUTPUT_LANG=es
+```
 
-## Learn More
+### 4️⃣ Run the app
+```bash
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📌 Limitations & Future Improvements
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Authentication & session management
+- Audit logging
+- Provider fallback strategies
+- Expanded language support
+- Production HIPAA compliance
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

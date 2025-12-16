@@ -42,7 +42,7 @@ export default function MicrophoneButton({ onTranscript }: any) {
     if (!recorder) return;
 
     recorder.stop();
-    recorder.stream.getTracks().forEach((t) => t.stop());
+    recorder.stream.getTracks().forEach((t) => t.stop()); //releases the microphone hardware
     mediaRecorderRef.current = null;
     setRecording(false);
 

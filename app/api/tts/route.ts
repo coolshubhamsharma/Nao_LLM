@@ -23,8 +23,8 @@ export async function POST(req: Request) {
       })
     });
 
-    const audioBuffer = await response.arrayBuffer();
-    const audioBase64 = Buffer.from(audioBuffer).toString("base64");
+    const audioBuffer = await response.arrayBuffer(); //reading the response body as raw binary audio data
+    const audioBase64 = Buffer.from(audioBuffer).toString("base64");//Converting binary audio into a Base64 string so it can be safely returned inside JSON.
 
     return NextResponse.json({ audioBase64 });
   } catch (error: any) {
